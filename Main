@@ -1,0 +1,48 @@
+/*Jimmy Lieu
+COSC 1336 001
+10/25/2021
+Purpose: Create a bank application to show balance, deposit, and withdrawal. (Program4)*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void main() {
+    double balance, transaction, overdraftBalance, newBalance, depositBalance;
+    printf("Please enter your current balance and the amount of your transaction, seperated by a space: ");
+    scanf("%lf %lf", &balance, &transaction);
+    if (balance < -transaction) {
+        printf("This transaction is more than your balance and will charge an overdraft fee of $25.00\n");
+        printf("Your previous balance was $%.2f\n", balance);
+        printf("You performed a withdrawal of $%.2f\n", transaction);
+        overdraftBalance = (balance + transaction - 25);
+        printf("Your new balance is $%.2f\n", overdraftBalance);
+    }
+    else if (balance >= transaction, transaction < 0) {
+        printf("This transaction was successful.\n");
+        printf("Your previous balance was $%.2f\n", balance);
+        printf("You performed a withdrawal of $%.2f\n", transaction);
+        newBalance = (balance + transaction);
+        printf("Your new balance is $%.2f\n", newBalance);
+    }
+    else if (balance == transaction) {
+        printf("This transaction was successful.\n");
+        printf("Your previous balance was $%.2f\n", balance);
+        printf("You performed a withdrawal of $%.2f\n", transaction);
+        newBalance = (balance + transaction);
+        printf("Your new balance is $%.2f\n", newBalance);
+    }
+    else if (balance > transaction) {
+        printf("This transaction was successful.\n");
+        printf("Your previous balance was $%.2f\n", balance);
+        printf("You performed a deposit of $%.2f\n", transaction);
+        depositBalance = (balance + transaction);
+        printf("Your new balance is $%.2f\n", depositBalance);
+    }
+    else if (balance < transaction) {
+        printf("This transaction successful.\n");
+        printf("Your previous balance was $%.2f\n", balance);
+        printf("You performed a deposit of $%.2f\n", transaction);
+        depositBalance = (balance + transaction);
+        printf("Your new balance is $%.2f\n", depositBalance);
+    }
+}
+    
